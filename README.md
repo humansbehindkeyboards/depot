@@ -12,6 +12,12 @@ Add the following to your Helm repositories and enjoy:
 $ helm repo add hbk https://humansbehindkeyboards.github.io/depot
 ```
 
+Or pull the container image:
+
+```shell
+$ docker pull ghcr.io/humansbehindkeyboards/containers/<image-name>:<image-tag>
+```
+
 Please check the [Issue Tracker](https://github.com/humansbehindkeyboards/depot/issues) for any deployment issues and open a new issue if it's not already known.
 
 ## Contributing
