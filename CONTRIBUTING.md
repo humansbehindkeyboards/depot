@@ -15,11 +15,46 @@ Please note we have a code of conduct, please follow it in all your interactions
 
 ## Content
 
+### Container Images
+
+All the Container Images must be stored in the `containers/` directory, for instance:
+
+```diff
+  .
+  ├── .github
+  ├── containers/
++ │   ├── hello-world/
+  │   │   ├── ...
+  │   │   └── Dockerfile
+  │   └── ...
+  ├── charts/
+  │   ├── hello-world/
+  │   │   ├── templates
+  │   │   ├── Chart.yaml
+  │   │   └── values.yaml
+  │   └── ...
+  ├── README.md
+  ├── LICENSE
+  ├── CONTRIBUTING.md
+- └── my-container-image/
+      └── ...
+```
+
+- `hello-world` container image placed in `containers/` it's in the right location
+- `my-container-image` placed in the root it's in the wrong location
+
+### Helm Charts
+
 All the Helm Charts must be stored in the `charts/` directory, for instance:
 
 ```diff
   .
   ├── .github
+  ├── containers/
+  │   ├── hello-world/
+  │   │   ├── ...
+  │   │   └── Dockerfile
+  │   └── ...
   ├── charts/
 + │   ├── hello-world/
   │   │   ├── templates
