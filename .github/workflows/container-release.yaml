@@ -1,0 +1,30 @@
+name: 🐋 Publish Container Images
+
+on:
+  push:
+    branches:
+      - main
+      - feat/container-cicd # testing purposes
+
+jobs:
+  detect-changes:
+    name: Fetch updated container files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Spot updated containers
+        id: changed-files
+        uses: tj-actions/changed-files@v46.0.5
+        with:
+          matrix: true
+          files: containers/**
+
+      - name: List updated containers
+        run: echo '${{ steps.changed-files.outputs.all_changed_files }}'
+        
+    outputs:
+      matrix: ${{ steps.changed-files.outputs.all_changed_files }}
